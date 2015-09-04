@@ -1,0 +1,13 @@
+{
+  "name": "HelloIonic",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.1.0"
+  },
+  "dependencies": {
+    "Chart.StackedBar.js": "~1.0.3",
+    "Chart.js": "~1.0.2",
+    "angular-chart.js": "~0.8.1",
+    "ngCordova": "~0.1.20-alpha"
+  }
+}
