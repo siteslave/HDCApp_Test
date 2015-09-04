@@ -17,9 +17,17 @@ angular.module('starter.controllers.MapController', [
         var lng = $rootScope.latLng.K;
         var title = $scope.title;
 
-        console.log(lat);
-        console.log(lng);
-        console.log(title);
+        MapService.saveMap(lat, lng, title)
+          .then(function (data) {
+            if (data.ok) {
+              alert('บันทึกเสร็จเรียบร้อย');
+            } else {
+              console.log(data.msg);
+              alert('เกิดข้อผิดพลาด');
+            }
+          }, function (err) {
+            console.log('Error' + JSON.stringify(err));
+          })
 
       };
 
