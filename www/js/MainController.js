@@ -22,8 +22,15 @@ angular.module('starter.controllers.MainController', [
     var target = [];
     var result = [];
 
+    $scope.isShow = false;
+
     $scope.showGraph = function () {
       //alert(JSON.stringify($scope.year));
+      $scope.labels = [];
+      $scope.data = [];
+      target = [];
+      result = [];
+
       MainService.getKPI($scope.year.id)
         .then(function (data) {
           if (data.ok) {
@@ -39,6 +46,8 @@ angular.module('starter.controllers.MainController', [
 
             $scope.data.push(target);
             $scope.data.push(result);
+
+            $scope.isShow = true;
 
           } else {
             // เกิดข้อผิดพลาดฝั่ง server

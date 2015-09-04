@@ -4,7 +4,7 @@ angular.module('starter.directives', [])
   return {
     restrict: 'E',
     scope: {
-      onCreate: '&'
+      onCreate: '&' // on-create
     },
     link: function ($scope, $element, $attr) {
 
@@ -13,12 +13,14 @@ angular.module('starter.directives', [])
         var markers = [];
 
         $ionicPlatform.ready(function () {
+
           $scope.loading = $ionicLoading.show({
             content: 'Getting current location...',
             showBackdrop: false
           });
-          navigator.geolocation.getCurrentPosition(function (pos) {
 
+          navigator.geolocation.getCurrentPosition(function (pos) {
+            console.log(pos);
             var mapOptions = {
               //center: new google.maps.LatLng(13.795534592741397, 100.57345487569083),
               zoom: 16,
@@ -29,8 +31,8 @@ angular.module('starter.directives', [])
 
             map.setCenter(new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude));
 
-            console.log('Got pos', pos);
             $ionicLoading.hide();
+
 
             var clearMarker = function () {
               for (var i = 0; i < markers.length; i++) {
@@ -42,6 +44,7 @@ angular.module('starter.directives', [])
 
               clearMarker();
 
+              //console.log(e);
               $rootScope.setLatLng(e.latLng);
 
               var marker = new google.maps.Marker({
