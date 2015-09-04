@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.hdcapp814827" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.develmate.hdcapp814827" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>HDCApp</name>
   <description>
-        An Ionic Framework and Cordova project.
+        HDC App
     </description>
-  <author email="hi@ionicframework" href="http://ionicframework.com/">
-      Ionic Framework Team
+  <author email="siteslave@msn.com" href="http://github.com/siteslave">
+      HDC App
     </author>
   <content src="index.html"/>
   <access origin="*"/>
